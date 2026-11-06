@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>X Reputation — by @devameer0</title>
+<meta name="description" content="Check an X account's reputation: Sorsa Score, smart followers, engagement, and more.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<span class="orb o1" aria-hidden="true"></span>
+<span class="orb o2" aria-hidden="true"></span>
+<span class="orb o3" aria-hidden="true"></span>
+<span class="orb o4" aria-hidden="true"></span>
+<span class="orb o5" aria-hidden="true"></span>
+
+<main id="main" class="page">
+  <header class="corners">
+    <h1 class="top">X <span class="out">Reputation</span></h1>
+  </header>
+
+  <section class="hero wrap">
+    <p class="eyebrow">Account reputation report</p>
+    <h2 class="headline">How strong is this<br>account’s <em>reputation</em>?</h2>
+    <p class="sub">Sorsa Score, smart follower quality, engagement, and account history — in plain language.</p>
+
+    <form id="lookup-form" class="lookup" autocomplete="off">
+      <label class="vh" for="username">X username</label>
+      <div class="lookup-row">
+        <span class="at" aria-hidden="true">@</span>
+        <input id="username" name="username" type="text" maxlength="15" placeholder="devameer0" spellcheck="false" autocapitalize="off" autocorrect="off" required>
+        <button type="submit" class="btn" id="lookup-btn">Check reputation</button>
+      </div>
+      <p class="hint">Public data only. No shadowban checks. Free API tier is limited — results are cached.</p>
+    </form>
+  </section>
+
+  <div id="status" class="wrap status" hidden role="status" aria-live="polite"></div>
+  <div id="error" class="wrap error-box" hidden role="alert"></div>
+
+  <section id="results" class="wrap results" hidden>
+    <!-- HERO reputation card -->
+    <article class="card rep-hero" id="rep-hero">
+      <div class="rep-hero-top">
+        <img id="avatar" class="avatar" alt="" width="72" height="72">
+        <div class="profile-meta">
+          <div class="name-row">
+            <h3 id="display-name"></h3>
+            <span id="verified-badge" class="badge" hidden>Verified</span>
+          </div>
+          <a id="handle-link" class="handle" href="#" target="_blank" rel="noopener noreferrer"></a>
+          <p id="bio" class="bio"></p>
+        </div>
+      </div>
+
+      <div class="score-panel" id="score-panel">
+        <div class="skeleton" style="height:120px"></div>
+      </div>
+
+      <p class="plain" id="score-plain" hidden></p>
+
+      <dl class="stats" id="profile-stats"></dl>
+      <dl class="about-grid" id="about-grid"></dl>
+    </article>
+
+    <article class="card section" data-section="quality">
+      <header class="sec-h">
+        <h3>Follower quality</h3>
+        <span class="tag">Who follows them</span>
+      </header>
+      <div class="sec-body" data-body><div class="skeleton"></div></div>
+    </article>
+
+    <div class="grid-2">
+      <article class="card section" data-section="verified">
+        <header class="sec-h">
+          <h3>Verified followers</h3>
+          <span class="tag">First page</span>
+        </header>
+        <div class="sec-body" data-body><div class="skeleton"></div></div>
+      </article>
+      <article class="card section" data-section="engagement">
+        <header class="sec-h">
+          <h3>Engagement</h3>
+          <span class="tag">Recent posts</span>
+        </header>
+        <div class="sec-body" data-body><div class="skeleton"></div></div>
+      </article>
+    </div>
+
+    <article class="card section" data-section="top-followers">
+      <header class="sec-h">
+        <h3>Top smart followers</h3>
+        <span class="tag">Highest Sorsa Score</span>
+      </header>
+      <div class="sec-body" data-body><div class="skeleton"></div></div>
+    </article>
+
+    <article class="card section" data-section="new-followers">
+      <header class="sec-h">
+        <h3>New smart followers</h3>
+        <span class="tag">Last 7 days</span>
+      </header>
+      <div class="sec-body" data-body><div class="skeleton"></div></div>
+    </article>
+
+    <article class="card section" data-section="tweets">
+      <header class="sec-h">
+        <h3>Recent posts</h3>
+        <span class="tag">Used for engagement</span>
+      </header>
+      <div class="sec-body" data-body><div class="skeleton"></div></div>
+    </article>
+  </section>
+
+  <footer class="credit">
+    <a class="by" href="https://x.com/devameer0" target="_blank" rel="noopener noreferrer">by @devameer0</a>
+  </footer>
+</main>
+
+<script src="app.js" defer></script>
+</body>
+</html>
