@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: x-reputation
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: SORSA_API_KEY
+        sync: false
+      - key: SORSA_MOCK
+        value: "0"
+      - key: CACHE_TTL_SEC
+        value: "600"
